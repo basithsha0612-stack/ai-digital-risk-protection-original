@@ -1,0 +1,40 @@
+beacon-drp/
+├── apps/
+│   ├── web/                  # Analyst dashboard (React)
+│   ├── api/                  # REST/GraphQL gateway, auth, RBAC
+│   └── worker/               # Job runner for scans and takedowns
+├── services/
+│   ├── collectors/           # One module per data source
+│   │   ├── domains/          # New registrations, certificate logs, DNS
+│   │   ├── social/           # X, LinkedIn, Facebook, Telegram
+│   │   ├── appstores/        # Google Play, App Store, third-party stores
+│   │   ├── darkweb/          # Forums, markets, paste sites
+│   │   └── leaks/            # Breach dumps, code repositories
+│   ├── detection/            # Scoring, lookalike matching, ML models
+│   ├── enrichment/           # WHOIS, hosting, screenshots, reputation
+│   ├── takedown/             # Registrar, host and platform abuse workflows
+│   ├── alerting/             # Email, Slack, SIEM and ticket integrations
+│   └── reporting/            # Exports and executive summaries
+├── packages/
+│   ├── shared-types/         # Threat, Asset, Case schemas
+│   ├── config/               # Env and feature flags
+│   └── ui/                   # Shared components
+├── data/
+│   ├── migrations/           # Database schema
+│   ├── seeds/                # Sample brands and threats
+│   └── rules/                # Detection rules (YAML)
+├── infra/
+│   ├── docker/
+│   ├── terraform/            # Cloud resources
+│   └── k8s/
+├── docs/
+│   ├── architecture.md
+│   ├── threat-model.md
+│   └── runbooks/             # Takedown and incident procedures
+├── tests/
+│   ├── unit/
+│   ├── integration/
+│   └── fixtures/             # Recorded sample feeds
+├── .github/workflows/        # CI/CD
+├── docker-compose.yml
+└── README.md
